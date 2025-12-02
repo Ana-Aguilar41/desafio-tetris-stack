@@ -1,0 +1,25 @@
+# Desafio Tetris Stack
+# Calcula a altura final da pilha com base nas peças recebidas
+
+def tetris_stack(pecas):
+    pilha = []
+
+    for p in pecas:
+        if not pilha:
+            pilha.append(p)
+        else:
+            # Se a peça é igual ao topo, empilha
+            if p == pilha[-1]:
+                pilha.append(p)
+            else:
+                # Se for diferente, remove o topo (stack)
+                pilha.pop()
+
+    return len(pilha)
+
+
+# Exemplo de uso:
+entrada = ["L", "L", "T", "T", "T", "Q", "Q", "L"]
+resultado = tetris_stack(entrada)
+
+print("Altura final da pilha:", resultado)
